@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  proselyte-awssqs-demo:
+    image: proselyte-awssqs-demo:latest
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PROSELYTE_R2DBC_URL=r2dbc:pool:postgres://host.docker.internal:5432/proselyte-sqs-demo
+      - PROSELYTE_R2DBC_USER=postgres
+      - PROSELYTE_R2DBC_PASSWORD=postgres
+      - PROSELYTE_DB_URL=jdbc:postgresql://host.docker.internal:5432/proselyte-sqs-demo
+      - PROSELYTE_DB_USER=postgres
+      - PROSELYTE_DB_PASSWORD=postgres
+      - PROSELYTE_AWS_ACCESS_KEY=AKIA3AKXSFNRFJRQDHBI
+      - PROSELYTE_AWS_SECRET_KEY=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
+      - PROSELYTE_AWS_REGION=us-east-1
+      - PROSELYTE_SQS_QUEUE_NAME=proselyte-sqs-demo.fifo
+      - PROSELYTE_SQS_QUEUE_REGION=us-east-1
+    deploy:
+      mode: replicated
+      replicas: 3
