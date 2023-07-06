@@ -15,8 +15,8 @@ services:
       - PROSELYTE_DB_URL=jdbc:postgresql://host.docker.internal:5432/proselyte-sqs-demo
       - PROSELYTE_DB_USER=postgres
       - PROSELYTE_DB_PASSWORD=postgres
-      - PROSELYTE_AWS_ACCESS_KEY=AKIA3AKXSFNRFJRQDHBI
-      - PROSELYTE_AWS_SECRET_KEY=ZVnfDzBWifQrP5AmB6n92+CeR9nGkYsDr+t7ACa2
+      - PROSELYTE_AWS_ACCESS_KEY=[PUT_YOUR_ACCESS_KEY]
+      - PROSELYTE_AWS_SECRET_KEY=[PUT_YOUR_SECRET_KEY]
       - PROSELYTE_AWS_REGION=us-east-1
       - PROSELYTE_SQS_QUEUE_NAME=proselyte-sqs-demo.fifo
       - PROSELYTE_SQS_QUEUE_REGION=us-east-1
