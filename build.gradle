@@ -28,8 +28,9 @@ dependencies {
 	implementation "org.flywaydb:flyway-core:$flywayDbVersion"
 	implementation "io.r2dbc:r2dbc-postgresql:$r2dbcVersion"
 	implementation "org.postgresql:postgresql:$postgresVersion"
-	implementation group: 'io.github.cdimascio', name: 'java-dotenv', version: '5.2.2'
+	implementation "io.github.cdimascio:java-dotenv:$cdimascioVersion"
 
+	implementation "com.google.code.findbugs:jsr305:$googleFindBugsVersion"
 	implementation "org.mapstruct:mapstruct:$mapStructVersion"
 
 	compileOnly "org.projectlombok:lombok"
